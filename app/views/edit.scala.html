@@ -1,0 +1,15 @@
+@(id: Long, contact: Form[Contact])
+
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+
+@layout {
+    <h2>Update Contact</h2>
+
+    @helper.form(action = routes.Contacts.update(id)) {
+        @helper.inputText(contact("name"), '_label -> "Name")
+        @helper.inputText(contact("emailAddress"), '_label -> "Email Address")
+
+        <input type="submit" value="Update Contact">
+    }
+}
